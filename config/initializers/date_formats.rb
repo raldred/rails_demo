@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:from_ar] = "%Y-%m-%d %H:%M:%S"

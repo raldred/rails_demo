@@ -1,0 +1,27 @@
+<h1>Add new converation</h1>
+<%= form_for @email_conversation do |f| %>
+  <fieldset>
+    <legend>Email Conversation</legend>
+    <label>
+      Title: 
+      <%= f.text_field :title %>
+    </label>
+     
+    <%= f.fields_for :email_messages do |mf| %>
+      <fieldset>
+        <legend>Email Message</legend>
+        <label>
+          Publish at: 
+          <%= mf.text_field :publish_at, :value => mf.object.publish_at.try(:to_s,:from_ar) %>
+          Remove: <%= mf.check_box :_destroy, :checked => mf.object.new_record? %>
+        </label>
+      </fieldset>
+    <% end %>
+  
+  </fieldset>
+  
+  
+  
+  <%= f.submit %>
+  
+<% end %>

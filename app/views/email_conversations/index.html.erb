@@ -1,0 +1,7 @@
+<%= link_to "Add new", new_email_conversation_path %>
+
+<ul>
+<% @email_conversations.each do |ec| %>
+  <li><%= link_to ec.title.blank? ? 'No title': ec.title, edit_email_conversation_path(ec) %></li>
+<% end %>
+</ul>
