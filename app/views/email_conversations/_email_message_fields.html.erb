@@ -1,0 +1,8 @@
+<fieldset>
+  <legend>Email Message</legend>
+  <label>
+    Publish at: 
+    <%= f.text_field :publish_at, :value => f.object.publish_at.try(:to_s,:from_ar_long) %>
+  </label>
+  <%= link_to_remove_fields "Remove message", f %>
+</fieldset>
